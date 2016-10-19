@@ -1,19 +1,23 @@
-angular.module('carApp').factory('Car', function($resource) {
-	return $resource('http://localhost:8080/cars/:id', {id: '@id'});
-});
-
-
-angular.module('carApp').controller('carController', ['Car', function(Car) {
-	var vm = this;
-	vm.cars = [];
-	
-//	this.addCar = function() {
-//		//var car_temp = new car({})
-//		var k = 0;
+//'use strict';
+//
+//angular.module('MyService').factory('Car', function($resource) {
+//	return $resource('http://localhost:8080/cars/:id');
+//});
+//
+//
+//angular.module('carApp', [])
+//.controller('MyController', ['MyService',  function(MyService) {	
+//	$scope.cars = [];
+//	$scope.selectedcar = null;
+//	
+//	$scope.getCar = function(){
+//		var selectedcar = MyService.get({ id: 1 }, function() {
+//		    console.log(selectedcar);
+//		    $scope.selectedcar = selectedcar;
+//		    
+//		}); // get() returns a single entry
 //	};
-	
-	this.getAllCars = function(){
-		vm.cars = Car.query();
-	};
-	
-}]);
+//	
+//}]);
+
+

@@ -66,6 +66,7 @@
             <artifactId>spring-boot-starter-tomcat</artifactId>
             <scope>provided</scope>
         </dependency>
+        <!-- Fine WAR -->
 		
 	</dependencies>
 

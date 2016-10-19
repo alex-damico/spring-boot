@@ -9,24 +9,30 @@
 	<script type="text/javascript" src="./lib/angular-animate.min.js"></script>
 	<script type="text/javascript" src="./lib/angular-resource-min.js"></script>
 	<script type="text/javascript" src="./js/app.js"></script>
-	<script type="text/javascript" src="./js/car/car.component.js"></script>
 </head>
 
 <body>
-	<div ng-controller="carController">
-		<input type="text" name="brand" ng-model="carController.brand" /><br></br>
-		<input type="text" name="color" ng-model="carController.color" /><br></br>
-		<input type="text" name="sign" ng-model="carController.sign" /><br></br>
+	<div ng-controller="carCtrl">
+<!-- 		<input type="text" name="brand" ng-model="carController.brand" /><br></br> -->
+<!-- 		<input type="text" name="color" ng-model="carController.color" /><br></br> -->
+<!-- 		<input type="text" name="sign" ng-model="carController.sign" /><br></br> -->
 <!-- 		<button type="button" ng-click="carController.addCar()">Add Car</button> -->
 		
 		
 		<h3>All Cars:</h3><br></br>
-		<button ng-click="getAllCars()"></button><br></br>
+		<button ng-click="getAllCars()">Cars</button><br></br>
 		<ul>
-			<li ng-repeat="refCar in cars">
-				{{ refCar.brand }} {{ refCar.color }} {{ refCar.sign }}
-			</li>
+<!-- 			<li ng-repeat="refCar in carApp.controller.cars"> -->
+<!-- 				{{ refCar[$index].brand }} {{ refCar[$index].color }} {{ refCar[$index].sign }} -->
+<!-- 			</li> -->
 		</ul>
+		
+		<br></br>
+		<br></br>
+		
+		<h3>Get Car</h3><br></br>
+		<button ng-click="getCar()">Car</button><br></br>
+		
 	</div>
 	
 	
