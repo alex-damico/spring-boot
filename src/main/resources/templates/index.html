@@ -21,17 +21,23 @@
 		
 		<h3>All Cars:</h3><br></br>
 		<button ng-click="getAllCars()">Cars</button><br></br>
-		<ul>
-<!-- 			<li ng-repeat="refCar in carApp.controller.cars"> -->
-<!-- 				{{ refCar[$index].brand }} {{ refCar[$index].color }} {{ refCar[$index].sign }} -->
-<!-- 			</li> -->
-		</ul>
+		<table>
+			<tr ng-repeat="refCar in cars">
+	    		<td>{{ refCar.brand }}</td>
+	    		<td>{{ refCar.color }}</td>
+	    		<td>{{ refCar.sign }}</td>
+  			</tr>
+		</table>
 		
-		<br></br>
-		<br></br>
+		<hr></hr>
 		
 		<h3>Get Car</h3><br></br>
 		<button ng-click="getCar()">Car</button><br></br>
+		<div ng-show="selectedCar!=null">
+			<b>Modello: {{ selectedCar.brand }}</b> <br></br>
+			<b>Colore: {{ selectedCar.color }}</b> <br></br>
+			<b>Targa: {{ selectedCar.sign }}</b>
+		</div>
 		
 	</div>
 	
