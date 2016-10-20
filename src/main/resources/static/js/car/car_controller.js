@@ -1,6 +1,10 @@
+'use strict';
+
 myApp.controller('carCtrl', ['$scope', 'carService', function($scope, carService) {	
-	$scope.cars = [];
-	$scope.selectedCar = null;
+	$scope.garage =  {
+		cars: [],
+		selectedCar: null
+	}
 	
 	// Get a single car
     $scope.getCar = function() {
@@ -8,7 +12,7 @@ myApp.controller('carCtrl', ['$scope', 'carService', function($scope, carService
     	
     	carService.get({id: 1}, function(data) {
     		console.log(data);
-    		$scope.selectedCar = {brand: data.brand, color: data.color, sign: data.sign};
+    		$scope.garage.selectedCar = {brand: data.brand, color: data.color, sign: data.sign};
         });
     };
     
@@ -19,12 +23,12 @@ myApp.controller('carCtrl', ['$scope', 'carService', function($scope, carService
     	carService.query(function(data) {
     	    // success handler
     		console.log(data);
-    		$scope.cars = data._embedded.cars;
+    		$scope.garage.cars = data.cars;
     		
     	}, function(error) {
     	    // error handler
     		console.log(error);
-    		$scope.cars = null;
+    		$scope.garage.cars = null;
     	});
     };
     

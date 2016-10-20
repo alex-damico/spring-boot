@@ -24,7 +24,7 @@
 		<h3>All Cars:</h3><br></br>
 		<button ng-click="getAllCars()">Cars</button><br></br>
 		<table>
-			<tr ng-repeat="refCar in cars">
+			<tr ng-repeat="refCar in garage.cars">
 	    		<td>{{ refCar.brand }}</td>
 	    		<td>{{ refCar.color }}</td>
 	    		<td>{{ refCar.sign }}</td>
@@ -35,10 +35,10 @@
 		
 		<h3>Get Car</h3><br></br>
 		<button ng-click="getCar()">Car</button><br></br>
-		<div ng-show="selectedCar!=null">
-			<b>Modello: {{ selectedCar.brand }}</b> <br></br>
-			<b>Colore: {{ selectedCar.color }}</b> <br></br>
-			<b>Targa: {{ selectedCar.sign }}</b>
+		<div ng-show="garage.selectedCar!=null">
+			<b>Modello: {{ garage.selectedCar.brand }}</b> <br></br>
+			<b>Colore: {{ garage.selectedCar.color }}</b> <br></br>
+			<b>Targa: {{ garage.selectedCar.sign }}</b>
 		</div>
 		
 	</div>
