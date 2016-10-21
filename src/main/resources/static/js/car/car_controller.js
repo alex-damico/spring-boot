@@ -50,7 +50,7 @@ myApp.controller('carCtrl', ['$scope', 'carService', function($scope, carService
         }
     };
     
-    //--Update a single car---
+    // Update a single car
     $scope.getCarUpdate = function(indexCar) {
     	console.log("getCar");
     	

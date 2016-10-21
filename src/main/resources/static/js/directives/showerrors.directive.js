@@ -1,7 +1,5 @@
 (function () {
     'use strict';
-    ///
-    // riceve due eventi, per mostrare gli errori e cancellarli dal form
     angular
         .module('carApp')
         .directive('showerrors', [function () {
@@ -9,15 +7,14 @@
                 restrict: 'A',
                 require: '^form',
                 link: function (scope, el, attrs, formCtrl) {
-                    // cerca la textbox nel gruppo. Ha il campo nome
+                    // Terca la textbox nel gruppo. Ha il campo nome
                     var inputElement = el[0].querySelector("[name]");
-                    // trasforma l'elemento in un elemento angular
+                    // Trasforma l'elemento in un elemento angular
                     var inputNgElement = angular.element(inputElement);
-                    /* qual è il nome della textbox? Ci serve per andare a controllare gli
-                     errori nel form */
+                    // Ci serve per andare a controllare gli errori nel form
                     var inputName = inputNgElement.attr('name');
 
-                    // quando l'utente esce dalla textbox mostriamo l'errore
+                    // Quando l'utente esce dalla textbox mostriamo l'errore
                     inputNgElement.bind('blur', function () {
                         el.toggleClass('has-error', formCtrl[inputName].$invalid);
                         el.toggleClass('has-success', formCtrl[inputName].$valid);
