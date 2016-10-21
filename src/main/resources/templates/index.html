@@ -14,12 +14,7 @@
 </head>
 
 <body>
-	<div ng-controller="carCtrl">
-<!-- 		<input type="text" name="brand" ng-model="carController.brand" /><br></br> -->
-<!-- 		<input type="text" name="color" ng-model="carController.color" /><br></br> -->
-<!-- 		<input type="text" name="sign" ng-model="carController.sign" /><br></br> -->
-<!-- 		<button type="button" ng-click="carController.addCar()">Add Car</button> -->
-		
+	<div ng-controller="carCtrl">		
 		
 		<h3>All Cars:</h3><br></br>
 		<button ng-click="getAllCars()">Cars</button><br></br>
@@ -34,7 +29,8 @@
 		<hr></hr>
 		
 		<h3>Get Car</h3><br></br>
-		<button ng-click="getCar()">Car</button><br></br>
+		<input type="text" name="brand" ng-model="garage.indexCar" /><br></br>
+		<button ng-click="getCar(garage.indexCar)">Car</button><br></br>
 		<div ng-show="garage.selectedCar!=null">
 			<b>Modello: {{ garage.selectedCar.brand }}</b> <br></br>
 			<b>Colore: {{ garage.selectedCar.color }}</b> <br></br>

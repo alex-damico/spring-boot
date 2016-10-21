@@ -8,10 +8,10 @@ myApp.controller('carCtrl', ['$scope', 'carService', function($scope, carService
 	}
 	
 	// Get a single car
-    $scope.getCar = function() {
+    $scope.getCar = function(indexCar) {
     	console.log("getCar");
     	
-    	carService.crud().get({id: 1}, function(data) {
+    	carService.crud().get({id: indexCar}, function(data) {
     		console.log(data);
     		$scope.garage.selectedCar = {brand: data.brand, color: data.color, sign: data.sign};
         });
