@@ -32,7 +32,7 @@ myApp.controller('carCtrl', ['$scope', 'carService', function($scope, carService
     		$scope.garage.cars = null;
     	});
     };
-    
+
     // Save a single car
     $scope.create = function() {
     	console.log("create");
@@ -46,5 +46,4 @@ myApp.controller('carCtrl', ['$scope', 'carService', function($scope, carService
     		console.log(error);
     	});
     };
-    
 }]);
