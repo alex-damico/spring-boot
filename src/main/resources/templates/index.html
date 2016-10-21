@@ -41,6 +41,14 @@
 			<b>Targa: {{ garage.selectedCar.sign }}</b>
 		</div>
 		
+		<hr></hr>
+		
+		<h3>Create</h3><br></br>
+		Modello: <input type="text" ng-model="garage.newcar.brand" /> <br></br>       
+        Colore: <input type="text" ng-model="garage.newcar.color" /> <br></br>  
+        Targa: <input type="text" ng-model="garage.newcar.sign" /> <br></br>                        
+		<button ng-click="create()">Add</button><br></br>
+		
 	</div>
 	
 	
