@@ -50,5 +50,5 @@ serviceModule.factory('carService', ['$resource', function($resource) {
 		        }
 			});
 		}
-	 }
+	}
 }]);

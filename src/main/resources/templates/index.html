@@ -14,53 +14,84 @@
 </head>
 
 <body>
-	<div ng-controller="carCtrl">
+	<div class="container" ng-controller="carCtrl">
 
-		<h3>All Cars:</h3><br></br>
-		<button ng-click="getAllCars()">Cars</button><br></br>
-		<table>
-			<tr ng-repeat="refCar in garage.cars">
-				<td>{{ refCar.id }}</td>
-	    		<td>{{ refCar.brand }}</td>
-	    		<td>{{ refCar.color }}</td>
-	    		<td>{{ refCar.sign }}</td>
-  			</tr>
-		</table>
+        <!-- Get all Cars -->
+        <div class="row">
+            <h3>All Cars:</h3>
+            <button class="btn btn-default" ng-click="getAllCars()">Cars</button>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Modello</th>
+                    <th>Colore</th>
+                    <th>Targa</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="refCar in garage.cars">
+                        <td>{{ refCar.id }}</td>
+                        <td>{{ refCar.brand }}</td>
+                        <td>{{ refCar.color }}</td>
+                        <td>{{ refCar.sign }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 		
 		<hr></hr>
-		
-		<h3>Get Car:</h3><br></br>
-		<input type="text" name="brand" ng-model="garage.indexCar" /><br></br>
-		<button ng-click="getCar(garage.indexCar)">Car</button><br></br>
-		<div ng-show="garage.selectedCar!=null">
-			<b>Id: {{ garage.selectedCar.id }}</b> <br></br>
-			<b>Modello: {{ garage.selectedCar.brand }}</b> <br></br>
-			<b>Colore: {{ garage.selectedCar.color }}</b> <br></br>
-			<b>Targa: {{ garage.selectedCar.sign }}</b>
-		</div>
+
+        <!-- Get single car" -->
+        <div class="row">
+            <h3>Get Car:</h3>
+            <input type="text" class="form-control" name="brand" ng-model="garage.indexCar" />
+            <button class="btn btn-default" ng-click="getCar(garage.indexCar)">Car</button>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Modello</th>
+                    <th>Colore</th>
+                    <th>Targa</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr ng-show="garage.selectedCar!=null">
+                        <td>{{ garage.selectedCar.id }}</td>
+                        <td>{{ garage.selectedCar.brand }}</td>
+                        <td>{{ garage.selectedCar.color }}</td>
+                        <td>{{ garage.selectedCar.sign }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
 		<hr></hr>
-		
-		<h3>Create:</h3><br></br>
-		Modello: <input type="text" ng-model="garage.newcar.brand" /> <br></br>       
-        Colore: <input type="text" ng-model="garage.newcar.color" /> <br></br>  
-        Targa: <input type="text" ng-model="garage.newcar.sign" /> <br></br>                        
-		<button ng-click="create()">Add</button><br></br>
-		
-		<hr></hr>
-		
-		<h3>Update:</h3><br></br>
-		<input type="text" name="brand" ng-model="garage.indexCarUpdate" /><br></br>
-		<button ng-click="getCarUpdate(garage.indexCarUpdate)">Car</button><br></br>
-		
-		Id: <input type="text" ng-model="garage.updatecar.id" /> <br></br>  
-		Modello: <input type="text" ng-model="garage.updatecar.brand" /> <br></br>       
-        Colore: <input type="text" ng-model="garage.updatecar.color" /> <br></br>  
-        Targa: <input type="text" ng-model="garage.updatecar.sign" /> <br></br>                        
-		<button ng-click="update(garage.updatecar)">Update</button><br></br>
 
+        <!-- Add car -->
+        <div class="row">
+            <h3>Create:</h3>
+            <label>Modello: </label><input type="text" class="form-control" ng-model="garage.newcar.brand" />
+            <label>Colore</label><input type="text" class="form-control" ng-model="garage.newcar.color" />
+            <label>Targa:</label><input type="text" class="form-control" ng-model="garage.newcar.sign" />
+            <button class="btn btn-default" ng-click="create()">Add</button>
+        </div>
+
+        <hr></hr>
+
+        <!-- Update car -->
+        <div class="row">
+            <h3>Update:</h3>
+            <input type="text" class="form-control" name="brand" ng-model="garage.indexCarUpdate" />
+            <button class="btn btn-default" ng-click="getCarUpdate(garage.indexCarUpdate)">Car</button>
+            <br></br>
+            <label style="display: none">Id:</label><input type="text" ng-model="garage.updatecar.id" style="display: none"/>
+            <label>Modello:</label><input type="text" class="form-control" ng-model="garage.updatecar.brand" />
+            <label>Colore:</label><input type="text" class="form-control" ng-model="garage.updatecar.color" />
+            <label>Targa:</label><input type="text" class="form-control" ng-model="garage.updatecar.sign" />
+            <button class="btn btn-default" ng-click="update(garage.updatecar)">Update</button>
+        </div>
 	</div>
-	
-	
 </body>
 </html>
