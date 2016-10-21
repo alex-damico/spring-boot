@@ -20,6 +20,7 @@
 		<button ng-click="getAllCars()">Cars</button><br></br>
 		<table>
 			<tr ng-repeat="refCar in garage.cars">
+				<td>{{ refCar.id }}</td>
 	    		<td>{{ refCar.brand }}</td>
 	    		<td>{{ refCar.color }}</td>
 	    		<td>{{ refCar.sign }}</td>
@@ -32,6 +33,7 @@
 		<input type="text" name="brand" ng-model="garage.indexCar" /><br></br>
 		<button ng-click="getCar(garage.indexCar)">Car</button><br></br>
 		<div ng-show="garage.selectedCar!=null">
+			<b>Id: {{ garage.selectedCar.id }}</b> <br></br>
 			<b>Modello: {{ garage.selectedCar.brand }}</b> <br></br>
 			<b>Colore: {{ garage.selectedCar.color }}</b> <br></br>
 			<b>Targa: {{ garage.selectedCar.sign }}</b>
@@ -44,6 +46,18 @@
         Colore: <input type="text" ng-model="garage.newcar.color" /> <br></br>  
         Targa: <input type="text" ng-model="garage.newcar.sign" /> <br></br>                        
 		<button ng-click="create()">Add</button><br></br>
+		
+		<hr></hr>
+		
+		<h3>Update:</h3><br></br>
+		<input type="text" name="brand" ng-model="garage.indexCarUpdate" /><br></br>
+		<button ng-click="getCarUpdate(garage.indexCarUpdate)">Car</button><br></br>
+		
+		Id: <input type="text" ng-model="garage.updatecar.id" /> <br></br>  
+		Modello: <input type="text" ng-model="garage.updatecar.brand" /> <br></br>       
+        Colore: <input type="text" ng-model="garage.updatecar.color" /> <br></br>  
+        Targa: <input type="text" ng-model="garage.updatecar.sign" /> <br></br>                        
+		<button ng-click="update(garage.updatecar)">Update</button><br></br>
 
 	</div>
 	
