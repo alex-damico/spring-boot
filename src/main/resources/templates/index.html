@@ -88,12 +88,16 @@
             <h3>Update:</h3>
             <input type="text" class="form-control" name="brand" ng-model="garage.indexCarUpdate" />
             <button class="btn btn-default" ng-click="getCarUpdate(garage.indexCarUpdate)">Car</button>
-            <br></br>
-            <label style="display: none">Id:</label><input type="text" ng-model="garage.updatecar.id" style="display: none"/>
-            <label>Modello:</label><input type="text" class="form-control" ng-model="garage.updatecar.brand" />
-            <label>Colore:</label><input type="text" class="form-control" ng-model="garage.updatecar.color" />
-            <label>Targa:</label><input type="text" class="form-control" ng-model="garage.updatecar.sign" />
-            <button class="btn btn-default" ng-click="update(garage.updatecar)">Update</button>
+            <br></br><br></br>
+
+            <form name="formupdate">
+                <label style="display: none">Id:</label><input type="text" ng-model="garage.updatecar.id" style="display: none" />
+                <label>Modello:</label><input type="text" class="form-control" ng-model="garage.updatecar.brand" required="required" />
+                <label>Colore:</label><input type="text" class="form-control" ng-model="garage.updatecar.color" required="required" />
+                <label>Targa:</label><input type="text" class="form-control" ng-model="garage.updatecar.sign" required="required" />
+                <button class="btn btn-default" ng-click="update(garage.updatecar, formupdate.$valid)">Update</button>
+            </form>
+            <h1>Valid: {{formupdate.$valid}}</h1>
         </div>
 	</div>
 </body>

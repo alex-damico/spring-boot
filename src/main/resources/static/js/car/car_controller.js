@@ -36,9 +36,9 @@ myApp.controller('carCtrl', ['$scope', 'carService', function($scope, carService
 
     // Save a single car
     $scope.create = function(value) {
-    	console.log("create");
-
         if (value == true) {
+            console.log("create");
+
             carService.crud().save($scope.garage.newcar, function (data) {
                 // success handler
                 console.log(data);
@@ -60,15 +60,17 @@ myApp.controller('carCtrl', ['$scope', 'carService', function($scope, carService
         });
     };
     
-    $scope.update = function(car) {
-    	console.log("update");
-    	
-    	carService.crud().update({id: car.id}, car, function(data) {
-    	    // success handler
-    		console.log(data);
-    	}, function(error) {
-    	    // error handler
-    		console.log(error);
-    	});
+    $scope.update = function(car, value) {
+        if (value == true) {
+            console.log("update");
+
+            carService.crud().update({id: car.id}, car, function (data) {
+                // success handler
+                console.log(data);
+            }, function (error) {
+                // error handler
+                console.log(error);
+            });
+        }
     };
 }]);
