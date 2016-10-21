@@ -35,17 +35,19 @@ myApp.controller('carCtrl', ['$scope', 'carService', function($scope, carService
     };
 
     // Save a single car
-    $scope.create = function() {
+    $scope.create = function(value) {
     	console.log("create");
-    	
-    	carService.crud().save($scope.garage.newcar, function(data) {
-    	    // success handler
-    		console.log(data);
-    		$scope.garage.newcar = carService.createModel();
-    	}, function(error) {
-    	    // error handler
-    		console.log(error);
-    	});
+
+        if (value == true) {
+            carService.crud().save($scope.garage.newcar, function (data) {
+                // success handler
+                console.log(data);
+                $scope.garage.newcar = carService.createModel();
+            }, function (error) {
+                // error handler
+                console.log(error);
+            });
+        }
     };
     
     //--Update a single car---
